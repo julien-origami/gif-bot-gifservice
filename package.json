@@ -1,0 +1,18 @@
+{
+  "name": "gif-service",
+  "version": "1.0.0",
+  "description": "This is the GIF service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "BrokenArmsTeam",
+  "license": "ISC",
+  "dependencies": {
+    "boom": "^6.0.0",
+    "dotenv": "^4.0.0",
+    "hapi": "^16.6.2",
+    "node-fetch": "^1.7.3",
+    "request": "^2.83.0"
+  }
+}
