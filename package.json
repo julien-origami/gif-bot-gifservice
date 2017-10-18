@@ -4,7 +4,7 @@
   "description": "This is the GIF service",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js --exec babel-node --presets es2015"
   },
   "author": "BrokenArmsTeam",
   "license": "ISC",
@@ -13,6 +13,10 @@
     "dotenv": "^4.0.0",
     "hapi": "^16.6.2",
     "node-fetch": "^1.7.3",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "babel-cli": "^6.11.4",
+    "babel-preset-es2015": "^6.9.0",
+    "nodemon": "^1.10.0",
+    "babel-register": "^6.11.6"
   }
 }
