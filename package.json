@@ -17,6 +17,11 @@
     "babel-cli": "^6.11.4",
     "babel-preset-es2015": "^6.9.0",
     "nodemon": "^1.10.0",
+    "hapi-swaggered": "^2.12.2",
+    "hapi-swaggered-ui": "^2.6.2",
+    "inert": "^4.2.1",
+    "vision": "^4.1.1",
+    "joi": "^13.0.0",
     "babel-register": "^6.11.6"
   }
 }
