@@ -6,14 +6,17 @@ import swaggered from 'hapi-swaggered'
 import swaggeredUI from 'hapi-swaggered-ui'
 import vision from 'vision'
 import inert from 'inert'
+import syslog from 'syslog'
+
+const logger = syslog.createClient(514, '192.168.11.185')
 
 if (!process.env.GIPHY_TOKEN && !process.env.PATH) {
   throw 'Make sure you defined GIPHY_TOKEN and PATH in your .env file'
 }
 
 const server = new Hapi.Server()
-//server.connection({ port: 4322, host: '192.168.100.1', routes: { cors: true } })
-server.connection({ port: 4322, host: '192.168.43.20', routes: { cors: true } , labels: ['api'] })
+//server.connection({ port: 4322, host: '192.168.100.1', routes: { cors: true }, labels: ['api'] })
+server.connection({ port: 4322, host: '192.168.11.32', routes: { cors: true } , labels: ['api'] })
 
 server.register([
     vision,
@@ -45,6 +48,7 @@ routes(server)
 
 server.start((err) => {
     if (err) {
+	logger.alert(Date.now()+' Server gif didn\'t start')
         throw err
     }
     console.log('Server running at:', server.info.uri)
